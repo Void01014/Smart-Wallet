@@ -14,6 +14,8 @@ include("database.php");
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
+<script>
+</script>
 
 <body class="flex justify-center">
     <form action="manager.php" method="post" class="flex flex-col items-center gap-5 md:w-[30%] h-[100vh] bg-blue-400 shadow-[0_0_20px_gray] p-15" id="form">
@@ -51,27 +53,34 @@ include("database.php");
 
     <?php
     if (isset($_POST["add"])) {
-        // $username = filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS);
-        echo "nice";
-        // if (empty($username)) {
-        //     echo "plase enter a username";
-        // } elseif (empty($password)) {
-        //     echo "Please enter a password";
-        // } else {
-        //     $check_sql = "SELECT * FROM users WHERE username = '$username' LIMIT 1";
-        //     $result = mysqli_query($conn, $check_sql);
+        $mode = $_POST["mode"];
 
-        //     if (mysqli_num_rows($result) > 0) {
-        //         echo "This username is already taken.";
-        //     } else {
-        //         $sql = "INSERT INTO users (username, password)
-        //                     VALUES ('$username', '$hash')";
-        //         mysqli_query($conn, $sql);
-        //         echo "You are now Registered!";
-        //     }
-        // }
+        if ($mode == "income") {
+            $type = $_POST["type"];
+            $amount = $_POST["amount"];
+            $date = $_POST["date"];
+            $desc = $_POST["desc"];
+            $sql = "INSERT INTO income (type, amount, date, description)
+                        VALUES ('$type', '$amount', '$date', '$desc')";
+            mysqli_query($conn, $sql);
+            echo '<script>Swal.fire({icon: "success", title: "Operation successful", text: `Your income has been added`,}).then(() => {
+                  window.location.href = "manager.php";
+                  });</script>';
+        }
+        if ($mode == "expense") {
+            $type = $_POST["type"];
+            $amount = $_POST["amount"];
+            $date = $_POST["date"];
+            $desc = $_POST["desc"];
+            $sql = "INSERT INTO expense (type, amount, date, description)
+                        VALUES ('$type', '$amount', '$date', '$desc')";
+            mysqli_query($conn, $sql);
+            echo '<script>Swal.fire({icon: "success", title: "Operation successful", text: `Your expense has been added`,}).then(() => {
+                  window.location.href = "manager.php";
+                  });</script>';
+        }
     }
-    // mysqli_close($conn);
+    mysqli_close($conn);
     ?>
 </body>
 

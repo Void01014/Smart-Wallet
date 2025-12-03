@@ -1,7 +1,3 @@
-window.onload = function() {
-console.log("The page has fully loaded");
-alert(asd)
-};
 document.getElementById('switch').addEventListener('click', (event) => {
     const inc = document.getElementById("inc");
     const exp = document.getElementById("exp");
@@ -27,7 +23,7 @@ document.getElementById('switch').addEventListener('click', (event) => {
         <option value="food_groceries">Food & Groceries</option>
         <option value="transport">Transport</option>
         <option value="rent_housing">Rent/Housing</option>
-        <option value="investments_expenses">nvestment Expense</option>
+        <option value="investments_expenses">Investment Expense</option>
         <option value="health">Health</option>
         <option value="entertainment">Entertainment</option>
         <option value="shopping">Shopping</option>
@@ -41,28 +37,31 @@ const form = document.getElementById('form');
 
 form.addEventListener('submit', (e) => {
     const string_RGX = /^[A-Za-z0-9 .,&'()\-]+$/;
+    const amount_RGX = /^\d+(\.\d{1,2})?$/;
 
     if (form.querySelector('[name="type"]').value == 'default') {
         Swal.fire({icon: "error", title: "Oops...", text: "Please enter a valid type",});
+        e.preventDefault()
         return
     }
-    if (!form.querySelector('[name="amount"]').value || form.querySelector('[name="amount"]').value < 0) {
+    if (!amount_RGX.test(form.querySelector('[name="amount"]').value) || form.querySelector('[name="amount"]').value < 0) {
         Swal.fire({icon: "error", title: "Oops...", text: "Please enter a valid amount",});
+        e.preventDefault()
         return
     }
     if (!form.querySelector('[name="date"]').value){
         Swal.fire({icon: "error", title: "Oops...", text: "Please enter a valid date",});
+        e.preventDefault()
         return
     }
     if (form.querySelector('[name="amount"]').value < 0) {
         Swal.fire({icon: "error", title: "Oops...", text: "Please enter a valid amount",});
+        e.preventDefault()
         return
     }
     if (!string_RGX.test(form.querySelector('[name="desc"]').value)) {
         Swal.fire({icon: "error", title: "Oops...", text: "Please enter a valid description",});
+        e.preventDefault()
         return
     }
-
-    Swal.fire({icon: "success", title: "Oops...", text: "Please enter a valid type",});
-    return
 });
