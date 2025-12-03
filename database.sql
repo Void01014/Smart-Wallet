@@ -14,3 +14,8 @@ CREATE TABLE expense (
     description TEXT
 );
 
+INSERT INTO income (type, amount, date, description)
+                    VALUES ('$type', '$amount', '$date', '$desc')
+
+INSERT INTO expense (type, amount, date, description)
+                    VALUES ('$type', '$amount', '$date', '$desc')
