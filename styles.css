@@ -13,13 +13,29 @@ label{
     width: 50px;
     height: 50px;
 }
-#home img {
-    pointer-events: none;
-}
-
 
 #home:hover::after {
     content: "Home";
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.336);
+    color: white;
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 6px;
+    white-space: nowrap;
+    z-index: 9999;
+}   
+
+#add {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+}
+#add:hover::after {
+    content: "Add income/expense";
     position: absolute;
     bottom: -30px;
     left: 50%;
