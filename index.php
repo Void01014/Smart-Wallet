@@ -15,13 +15,34 @@ include("database.php");
 </head>
 <body class="flex justify-center">
     <nav>
-        <a class="absolute top-3 border" href="manager.php" id="add"></a>
+        <a class="absolute top-3" href="manager.php" id="add"><img class="pointer-events-none" src="img/add_icon.png" width="50" alt="home_button"></a>
     </nav>
 
-    <main>
-        <section id="balance">
+    <main class="flex justify-center gap-20 flex-wrap p-20  w-[100vw] h-[100%] bg-cyan-400">
+        <section class="w-120 h-70 bg-white rounded-2xl shadow-[0_0_10px_gray]" id="balance">
             
         </section>
+        <section class="w-80 h-70 bg-white rounded-2xl shadow-[0_0_10px_gray]" id="month_stats">
+            
+        </section>
+        <table class="w-[100%] h-70 bg-white rounded-2xl shadow-[0_0_10px_gray] bg-black text-center gap-10" id="table">
+            <tr class="bg-gray-500 text-center">
+                <th>yo</th>
+                <th>yo</th>
+                <th>yo</th>
+                <th>yo</th>
+                <th>yo</th>
+            </tr>    
+            <tr class="bg-gray-400">
+                <td>ea</td>
+                <td>ea</td>
+                <td>ea</td>
+                <td>ea</td>
+                <td>ea</td>
+            </tr>    
+        </table>
+
+        
     </main>
     <?php
 
