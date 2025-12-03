@@ -1,0 +1,16 @@
+CREATE TABLE income (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    type VARCHAR(100),
+    amount DECIMAL(10,2) NOT NULL,
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    description TEXT
+);
+
+CREATE TABLE expense (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    type VARCHAR(100),
+    amount DECIMAL(10,2) NOT NULL,
+    date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    description TEXT
+);
+
