@@ -65,7 +65,7 @@ include("database.php");
             $amount = $_POST["amount"];
             $date = $_POST["date"];
             $desc = $_POST["desc"];
-            $sql = "INSERT INTO income (type, amount, date, description)
+            $sql = "INSERT INTO $mode (type, amount, date, description)
                         VALUES (?, ?, ?, ?)";
 
             $stmt = mysqli_prepare($conn, $sql);

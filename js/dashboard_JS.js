@@ -26,7 +26,7 @@ new Chart(graph, {
 const rows = document.querySelectorAll('.rows');
 
 rows.forEach(element => {
-    element.insertAdjacentHTML('beforeend', `<button class = "bg-red-500 p-2 cursor-pointer delete">x</button>`);
+    element.insertAdjacentHTML('beforeend', `<td class="w-5"><button class = "bg-red-500 p-2 cursor-pointer delete">x</button></tr>`);
 });
 
 document.querySelectorAll('.delete').forEach(element => {

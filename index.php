@@ -95,6 +95,7 @@ $test = "hello";
                 <th>mode</th>
                 <th>type</th>
                 <th>amount</th>
+                <th>description </th>
                 <th>date</th>
             </tr>
             <?php
@@ -108,10 +109,11 @@ $test = "hello";
             $results = mysqli_query($conn, $sql3);
             while ($row = mysqli_fetch_assoc($results)) {
                 $color = $row["mode"] == 'income' ? '[#00fa00]' : "[#fa0000d9]";
-                echo '<tr class="bg-blue-100 rows" id=' . $row["id"] . ' data-mode=' . $row["mode"] . '>
+                echo '<tr class="bg-blue-100 text-[10px] md:text-[20px] rows " id=' . $row["id"] . ' data-mode=' . $row["mode"] . '>
                             <td  class=' . 'text-' . $color . '>' . $row["mode"] . '</td>
                             <td  class=' . 'text-' . $color . '>' . $row["type"] . '</td>
                             <td  class=' . 'text-' . $color . '>' . $row["amount"] . ' Dh' . '</td>
+                            <td  class=' . 'text-' . $color . '>' . $row["description"] . '</td>
                             <td  class=' . 'text-' . $color . '>' . $row["date"] . '</td>
                         </tr>';
             }
