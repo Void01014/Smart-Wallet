@@ -41,7 +41,7 @@ $test = "hello";
 
         ?>
         <section class="flex flex-col items-center justify-center gap-7 w-120 h-70 bg-white rounded-2xl shadow-[0_0_10px_gray]" id="balance">
-            <h2 class="text-5xl text-blue-700">Current balance:</h2>
+            <h2 class="text-5xl text-blue-700 text-center">Current balance:</h2>
             <?php
             echo "<h2 class='text-6xl'>{$balance} Dh</h2>";
             ?>
@@ -92,10 +92,9 @@ $test = "hello";
         </section>
         <table class="w-[100%] h-70 rounded-2xl shadow-[0_0_10px_gray] bg-blue-400  text-center rounded-3xl overflow-hidden text-white" id="table">
             <tr class="h-15 bg-blue-400 text-center">
-                <th>mode</th>
                 <th>type</th>
                 <th>amount</th>
-                <th>description </th>
+                <th>description</th>
                 <th>date</th>
             </tr>
             <?php
@@ -110,11 +109,10 @@ $test = "hello";
             while ($row = mysqli_fetch_assoc($results)) {
                 $color = $row["mode"] == 'income' ? '[#00fa00]' : "[#fa0000d9]";
                 echo '<tr class="bg-blue-100 text-[10px] md:text-[20px] rows " id=' . $row["id"] . ' data-mode=' . $row["mode"] . '>
-                            <td  class=' . 'text-' . $color . '>' . $row["mode"] . '</td>
-                            <td  class=' . 'text-' . $color . '>' . $row["type"] . '</td>
-                            <td  class=' . 'text-' . $color . '>' . $row["amount"] . ' Dh' . '</td>
-                            <td  class=' . 'text-' . $color . '>' . $row["description"] . '</td>
-                            <td  class=' . 'text-' . $color . '>' . $row["date"] . '</td>
+                            <td  class=" . text-' . $color . ' type">' . $row["type"] .'</td>
+                            <td  class=" . text-' . $color . ' amount">' . $row["amount"] . ' Dh' .'</td>
+                            <td  class=" . text-' . $color . ' desc">' . $row["description"] .'</td>
+                            <td  class=" . text-' . $color . ' date">' . $row["date"] .'</td>
                         </tr>';
             }
             ?>
