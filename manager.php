@@ -22,7 +22,7 @@ include("database.php");
         <a class="absolute left-[calc(42vw+19vh-14rem)] top-3" href="index.php" id="home"><img class="pointer-events-none" src="img/house_icon.png" width="50" alt="home_button"></a>
     </nav>
     <main class="md:w-[30%] h-[100vh]">
-        <form action="manager.php" method="post" class="flex flex-col items-center gap-5 h-full bg-blue-400 shadow-[0_0_20px_gray] p-15" id="form">
+        <form action="manager.php" method="post" class="flex flex-col items-center gap-5 h-full bg-cyan-400 shadow-[0_0_20px_gray] p-15" id="form">
             <input type="hidden" name="mode" value="income">
             <div class="self-end flex" id="switch">
                 <button type="button" class="bg-gray-300 w-20 selected rounded-l-lg p-2 cursor-pointer" id="inc">Income</button>

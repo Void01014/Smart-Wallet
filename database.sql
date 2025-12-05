@@ -19,3 +19,10 @@ INSERT INTO income (type, amount, date, description)
 
 INSERT INTO expense (type, amount, date, description)
                     VALUES ('$type', '$amount', '$date', '$desc')
+
+SELECT 'income' AS mode, id,type, amount, date, description
+                        FROM income
+                        UNION ALL
+                        SELECT 'expense' AS mode, id,type, amount, date, description
+                        FROM expense
+                        ORDER BY id;
