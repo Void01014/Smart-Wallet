@@ -26,3 +26,7 @@ SELECT 'income' AS mode, id,type, amount, date, description
                         SELECT 'expense' AS mode, id,type, amount, date, description
                         FROM expense
                         ORDER BY id;
+
+DELETE FROM $mode WHERE id = $id
+
+UPDATE $mode SET type = ?, amount = ?, description = ?, date = ? WHERE id = ?
