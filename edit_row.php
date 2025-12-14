@@ -8,8 +8,7 @@ if(isset($_POST['id'], $_POST['mode'], $_POST['type'], $_POST['amount'], $_POST[
     $amount = $_POST['amount'];
     $description = $_POST['description'];
     $date = $_POST['date'];
-
-    // prepare statement
+    
     $sql = "UPDATE $mode SET type = ?, amount = ?, description = ?, date = ? WHERE id = ?";
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt, "sdssi", $type, $amount, $description, $date, $id); 
