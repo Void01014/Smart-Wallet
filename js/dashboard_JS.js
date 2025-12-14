@@ -42,10 +42,7 @@ document.querySelectorAll('.edit').forEach(button => {
         const dateCell = row.querySelector('.date');
 
          if (!row.dataset.editing) {
-            // ▶️ ENTER EDIT MODE
             row.dataset.editing ="true" 
-
-
             
             const typeValue = typeCell.textContent.trim();
             const amountValue = amountCell.textContent.replace('Dh', '').trim();
@@ -57,7 +54,6 @@ document.querySelectorAll('.edit').forEach(button => {
             descCell.innerHTML = `<input type="text" value="${descValue}" class="edit-desc rounded-lg p-1 editable">`;
             dateCell.innerHTML = `<input type="date" value="${dateValue}" class="edit-date rounded-lg p-1 editable">`;
 
-            // Optional: change button text (still same style)
         } else {
 
             const id = row.id;
@@ -93,13 +89,6 @@ document.querySelectorAll('.edit').forEach(button => {
                 } catch (err) {
                 console.error('Error deleting row:', err);
                 }
-
-            // console.log("READY TO SEND:", {
-            //     newType,
-            //     newAmount,
-            //     newDesc,
-            //     newDate
-            // });
         }
     });
 
